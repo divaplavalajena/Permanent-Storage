@@ -14,11 +14,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        NSUserDefaults.standardUserDefaults().setObject("Jena", forKey: "name")
+        //NSUserDefaults.standardUserDefaults().setObject("Jena", forKey: "name")
         
-        let userName = NSUserDefaults.standardUserDefaults().objectForKey("name")!
+        let userName = NSUserDefaults.standardUserDefaults().objectForKey("name")! as! String
         
         print(userName)
+        
+        let arr = [1,2,3,4]
+        
+        NSUserDefaults.standardUserDefaults().setObject(arr, forKey: "array")
+        
+        let returnedArray = NSUserDefaults.standardUserDefaults().objectForKey("array")! as! NSArray
+        
+        //print(returnedArray)
+        
+        for i in returnedArray {
+            print([i])
+            
+        }
+        
+        
         
         
     }
